@@ -28,5 +28,6 @@ expected_title = "Dashboard"
 if expected_title not in actual_title:
     raise AssertionError("Login Test Failed")
 print("Login Successfully!")
+print ('testing')
 
 #driver.close()
