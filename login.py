@@ -9,7 +9,6 @@ service = Service(executable_path="C://browserdriver//geckodriver.exe")
 driver = webdriver.Firefox(service=service)
 driver.get("http://10.10.99.18:8002/login")
 
-#username = driver.find_element(By.NAME, "username")
 username = wait(driver,10).until(EC.presence_of_element_located((By.NAME, "username")))
 password = driver.find_element(By.NAME, "password")
 login_button = driver.find_element(By.ID, "login")
@@ -19,14 +18,11 @@ password.send_keys("Dost2123")
 login_button.click()
 time.sleep(5)
 
-audit_tab = wait(driver, 10).until(EC.element_to_be_clickable((By.ID, "audit")))
-audit_tab.click()
-
 actual_title = driver.title
 expected_title = "Dashboard"
 
 if expected_title not in actual_title:
     raise AssertionError("Login Test Failed")
-print("IAMS Login Successfully!!!!")
+print("Login Successfully!")
 
 #driver.close()
