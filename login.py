@@ -28,7 +28,5 @@ expected_title = "Dashboard"
 if expected_title not in actual_title:
     raise AssertionError("Login Test Failed")
 print("IAMS Login Successfully!!!!")
-print("Login Successfully!")
-#print ('testing')
 
 #driver.close()
